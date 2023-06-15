@@ -21,7 +21,6 @@ return require('packer').startup(function(use)
     -- use("laytan/cloak.nvim")
 
     -- Simple Plugns
-    use 'theprimeagen/harpoon'
     use 'wbthomason/packer.nvim'
     use 'theprimeagen/harpoon'
     use 'ayu-theme/ayu-vim'
@@ -30,8 +29,6 @@ return require('packer').startup(function(use)
     use 'eandrju/cellular-automaton.nvim'
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
-
-
 
     -- Lazy Loaded Plugins
     use {'Xuyuanp/nerdtree-git-plugin', opt = true, cmd = {'NERDTreeToggle', 'NERDTreeFind'}}
