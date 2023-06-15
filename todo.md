@@ -10,4 +10,4 @@
 - [ ] Agit toggle?
 - [ ] Port vim set commands
 - [ ] OnHover Show Tag
-- [ ] help is on left 80cols wide
+- [x] help is on left 80cols wide

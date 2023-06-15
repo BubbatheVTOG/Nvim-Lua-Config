@@ -21,7 +21,7 @@ vim.keymap.set('n', '<leader>pw', function()
 end)
 
 -- search for file under cursor
-vim.keymap.set('n', '<leader>pf', function()
+vim.keymap.set('n', '<leader>pw', function()
     builtin.live_grep({ default_text = vim.fn.expand("<cword>")})
 end)
 

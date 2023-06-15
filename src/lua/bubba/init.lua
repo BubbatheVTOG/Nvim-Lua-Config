@@ -1,6 +1,7 @@
 require("bubba.set")
 require("bubba.remap")
 require("bubba.packer")
+require("bubba.autocommands")
 
 -- NOTE:
 --[[

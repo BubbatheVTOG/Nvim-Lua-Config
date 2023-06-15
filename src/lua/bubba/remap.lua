@@ -53,8 +53,8 @@ vim.keymap.set("n", "=", ":vertical resize +10<CR>")
 vim.keymap.set("n", "-", ":vertical resize -10<CR>")
 
 -- Visual Horizontal Movement
-vim.keymap.set("n", "<", "<gv")
-vim.keymap.set("n", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- Move Between Buffers
 vim.keymap.set("n", "bn", ":bnext<CR>")
