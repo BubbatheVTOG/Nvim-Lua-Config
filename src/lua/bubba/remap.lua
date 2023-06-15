@@ -20,7 +20,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- quiting and saving
-vim.keymap.set("n", "<leader><leader>", ":w<CR>")
+vim.keymap.set("n", "<leader><leader>", ":w!<CR>")
 vim.keymap.set("n", "ff", ":wq<CR>")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")

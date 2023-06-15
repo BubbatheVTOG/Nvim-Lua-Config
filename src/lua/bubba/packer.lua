@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
     use 'karb94/neoscroll.nvim'
+    use 'cohama/agit.vim'
 
     -- Lazy Loaded Plugins
     use {'Xuyuanp/nerdtree-git-plugin', opt = true, cmd = {'NERDTreeToggle', 'NERDTreeFind'}}
