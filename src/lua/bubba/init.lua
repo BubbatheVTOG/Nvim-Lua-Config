@@ -2,6 +2,14 @@ require("bubba.set")
 require("bubba.remap")
 require("bubba.packer")
 
+-- NOTE:
+--[[
+local api = vim.api
+local g = vim.g
+local opt = vim.opt
+local cmd = vim.cmd
+]]
+
 local augroup = vim.api.nvim_create_augroup
 local BubbaGroup = augroup('Bubba', {})
 
