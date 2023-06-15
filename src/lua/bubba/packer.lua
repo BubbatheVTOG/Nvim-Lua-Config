@@ -31,6 +31,8 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
 
+
+
     -- Lazy Loaded Plugins
     use {'Xuyuanp/nerdtree-git-plugin', opt = true, cmd = {'NERDTreeToggle', 'NERDTreeFind'}}
 
@@ -53,9 +55,10 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
