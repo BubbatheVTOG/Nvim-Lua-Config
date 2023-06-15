@@ -24,6 +24,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ["<C-Space>"] = cmp.mapping.complete(),
     -- If nothing is selected (including preselections) add a newline as usual.
     -- If something has explicitly been selected by the user, select it.
+    --[[
     ["<Enter>"] = cmp.mapping({
         i = function(fallback)
             if cmp.visible() and cmp.get_active_entry() then
@@ -48,6 +49,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
             fallback()
         end
     end, { "i", "s", "c", }),
+    ]]
 })
 
 lsp.setup_nvim_cmp({
