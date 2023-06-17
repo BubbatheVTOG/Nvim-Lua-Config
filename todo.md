@@ -11,3 +11,4 @@
 - [ ] Port vim set commands
 - [ ] OnHover Show Tag(meh)
 - [x] help is on left 80cols wide
+- [ ] port my spelling fix functions
