@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-surround'
 	use 'vim-scripts/SearchComplete'
 	use 'wbthomason/packer.nvim'
+	use 'echasnovski/mini.nvim'
 
 	-- Lazy Loaded Plugins
 	use { 'Xuyuanp/nerdtree-git-plugin', opt = true, cmd = { 'NERDTreeToggle', 'NERDTreeFind' } }

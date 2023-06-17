@@ -21,7 +21,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Quiting and Saving
 vim.keymap.set("n", "<leader><leader>", ":w!<CR>")
-vim.keymap.set("n", "ff", ":wq!<CR>")
+vim.keymap.set("n", "qq", ":wq!<CR>")
 vim.keymap.set("i", "jj", "<Esc>")
 
 -- Copy
@@ -60,6 +60,18 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "bn", ":bnext<CR>")
 vim.keymap.set("n", "bp", ":bprevious<CR>")
 vim.keymap.set("n", "bd", ":bdelete<CR>")
+
+-- LSP
+vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
+vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
+vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
+vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end)
+vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end)
+vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end)
+vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end)
+vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end)
+vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end)
+vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
 
 --[[
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")

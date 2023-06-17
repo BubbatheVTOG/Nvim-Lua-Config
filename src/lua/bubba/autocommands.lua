@@ -1,3 +1,4 @@
+--[[
 vim.api.nvim_create_autocmd('FileType', {
 	desc = 'Move Help to the right',
 
@@ -8,3 +9,4 @@ vim.api.nvim_create_autocmd('FileType', {
 		end
 	end,
 })
+]]

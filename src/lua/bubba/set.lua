@@ -31,7 +31,6 @@ vim.opt.showmatch = true
 
 -- Display/Split
 vim.opt.nu = true
-vim.opt.guicursor = ""
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 10

@@ -14,46 +14,46 @@ lsp.ensure_installed({
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 
-
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    -- If nothing is selected (including preselections) add a newline as usual.
-    -- If something has explicitly been selected by the user, select it.
-    --[[
-    ["<Enter>"] = cmp.mapping({
-        i = function(fallback)
-            if cmp.visible() and cmp.get_active_entry() then
-                cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-            else
-                fallback()
-            end
-        end,
-        s = cmp.mapping.confirm({ select = true }),
-        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-    }),
-    ["<Tab>"] = cmp.mapping(function(fallback)
-        -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
-        if cmp.visible() then
-            local entry = cmp.get_selected_entry()
-            if not entry then
-                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-            else
-                cmp.confirm()
-            end
-        else
-            fallback()
-        end
-    end, { "i", "s", "c", }),
-    ]]
-})
+local cmp_select_opts = { behavior = cmp.SelectBehavior.Select }
 
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
+cmp.setup({
+    sources = {
+        { name = 'nvim_lsp' },
+    },
+    mapping = {
+        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select_opts),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select_opts),
+    },
+    snippet = {
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
+    window = {
+        documentation = {
+            max_height = 15,
+            max_width = 60,
+        }
+    },
+    formatting = {
+        fields = { 'abbr', 'menu', 'kind' },
+        format = function(entry, item)
+            local short_name = {
+                nvim_lsp = 'LSP',
+                nvim_lua = 'nvim'
+            }
+
+            local menu_name = short_name[entry.source.name] or entry.source.name
+
+            item.menu = string.format('[%s]', menu_name)
+            return item
+        end,
+    },
 })
 
 lsp.set_preferences({
@@ -66,10 +66,24 @@ lsp.set_preferences({
     }
 })
 
+
+--[[
+lsp.on_attach(function()
+    vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
+    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end)
+    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end)
+    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end)
+    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end)
+    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
+end)
+--[[
 lsp.on_attach(function(bufnr)
     local opts = { buffer = bufnr, remap = false }
-
-    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
@@ -80,6 +94,7 @@ lsp.on_attach(function(bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+]]
 
 lsp.setup()
 
