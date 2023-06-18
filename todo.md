@@ -12,3 +12,4 @@
 - [ ] OnHover Show Tag(meh)
 - [x] help is on left 80cols wide
 - [ ] port my spelling fix functions
+- [ ] fix issue with cursor moving to end of previous line from begining of current line.
