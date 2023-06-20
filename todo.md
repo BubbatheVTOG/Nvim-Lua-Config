@@ -13,3 +13,4 @@
 - [x] help is on left 80cols wide
 - [ ] port my spelling fix functions
 - [x] telescope multi select goes to quickfix menu
+- [x] fix issue with cursor moving to end of previous line from begining of current line.
