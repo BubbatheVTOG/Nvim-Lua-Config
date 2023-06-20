@@ -5,7 +5,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 
 -- File
-vim.api.nvim_command('filetype plugin indent on')
+-- vim.api.nvim_command('filetype plugin indent on')
 vim.opt.fileformats = {'unix', 'dos', 'mac'}
 vim.opt.smartindent = true
 vim.opt.autoindent = true

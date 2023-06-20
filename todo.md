@@ -12,3 +12,4 @@
 - [ ] OnHover Show Tag(meh)
 - [x] help is on left 80cols wide
 - [ ] port my spelling fix functions
+- [x] telescope multi select goes to quickfix menu

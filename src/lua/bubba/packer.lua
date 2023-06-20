@@ -1,4 +1,4 @@
--- Only required if you have packer configured as `opt`
+
 -- vim.cmd.packadd('packer.nvim')
 local ensure_packer = function()
 	local fn = vim.fn
@@ -14,6 +14,7 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+	use 'wbthomason/packer.nvim'
 	-- use("folke/zen-mode.nvim")
 	-- use("github/copilot.vim")
 	-- use("theprimeagen/refactoring.nvim")
@@ -36,7 +37,6 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-sleuth'
 	use 'tpope/vim-surround'
 	use 'vim-scripts/SearchComplete'
-	use 'wbthomason/packer.nvim'
 	-- use 'echasnovski/mini.nvim'
 
 	-- Lazy Loaded Plugins
@@ -106,6 +106,14 @@ return require('packer').startup(function(use)
 			{ 'rafamadriz/friendly-snippets' },
 		}
 	}
+
+	--[[
+	use {
+		'glepnir/dashboard-nvim',
+		event = 'VimEnter',
+		requires = { 'nvim-tree/nvim-web-devicons' }
+	}
+	]]
 
 
 	if packer_bootstrap then

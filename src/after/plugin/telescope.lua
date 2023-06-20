@@ -7,6 +7,7 @@ vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ps', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
+
 vim.keymap.set('n', '<leader>ht', builtin.help_tags, {})
 
 -- text serch
@@ -35,3 +36,5 @@ require('telescope').setup{
   extensions = {
   }
 }
+
+require('telescope').load_extension('harpoon')

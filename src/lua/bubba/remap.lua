@@ -19,7 +19,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Quitting and Saving
 vim.keymap.set("n", "<leader><leader>", ":w!<CR>")
-vim.keymap.set("n", "qq", ":wq!<CR>")
+vim.keymap.set("n", "qq", ":q!<CR>")
 vim.keymap.set("i", "jj", "<Esc>")
 
 -- Copy
@@ -55,9 +55,9 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- Move Between Buffers
-vim.keymap.set("n", "bn", ":bnext<CR>")
-vim.keymap.set("n", "bp", ":bprevious<CR>")
-vim.keymap.set("n", "bd", ":bdelete<CR>")
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
 
 -- LSP
 vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
