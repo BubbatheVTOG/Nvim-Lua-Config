@@ -12,7 +12,7 @@ autocmd("BufWinEnter", {
         end
 
         local bufnr = vim.api.nvim_get_current_buf()
-        local opts = {buffer = bufnr, remap = false}
+        local opts = { buffer = bufnr, remap = false }
         vim.keymap.set("n", "<leader>gp", function()
             vim.cmd.Git('push')
         end, opts)
@@ -27,3 +27,6 @@ autocmd("BufWinEnter", {
         vim.keymap.set("n", "<leader>gt", ":Git push -u origin ", opts);
     end,
 })
+
+vim.keymap.set("n", "<leader>gf", ":Git fetch<CR>");
+vim.keymap.set("n", "<leader>gp", ":Git pull<CR>");
