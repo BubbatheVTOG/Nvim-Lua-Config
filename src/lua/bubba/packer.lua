@@ -107,13 +107,11 @@ return require('packer').startup(function(use)
 		}
 	}
 
-	--[[
 	use {
 		'glepnir/dashboard-nvim',
 		event = 'VimEnter',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
-	]]
 
 
 	if packer_bootstrap then

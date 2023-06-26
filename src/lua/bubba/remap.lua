@@ -61,6 +61,7 @@ vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
 
 -- LSP
 vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
+-- vim.keymap.set("n", "<leader>gc", function() vim.lsp.buf.incomingCalls() end)
 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
 vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
 vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end)

@@ -14,3 +14,7 @@
 - [ ] port my spelling fix functions
 - [x] telescope multi select goes to quickfix menu
 - [x] fix issue with cursor moving to end of previous line from begining of current line.
+- [ ] cursor word highlighting working
+- [x] telescope track branches
+- [ ] telescope scroll search window
+- [ ] lsp <leader>gc populates list with callers
