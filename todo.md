@@ -16,6 +16,6 @@
 - [x] fix issue with cursor moving to end of previous line from begining of current line.
 - [ ] cursor word highlighting working
 - [x] telescope track branches
-- [ ] telescope scroll search window
+- [x] telescope scroll search window
 - [x] lsp <leader>gc populates list with callers
 - [ ] quickfix menu is editable
