@@ -6,7 +6,7 @@
         commit 666fc6443e0faaec1ec8fff397a4d65976f9b0ca
     - [x] find a fix
 - [ ] auto resize of panels
-- [ ] <C-h>,<C-l> for resize of buffers
+- [x] -,+ for resize of buffers
 - [ ] Agit toggle?
 - [ ] Port vim set commands
 - [ ] OnHover Show Tag(meh)
@@ -18,3 +18,4 @@
 - [x] telescope track branches
 - [ ] telescope scroll search window
 - [ ] lsp <leader>gc populates list with callers
+- [ ] quickfix menu is editable

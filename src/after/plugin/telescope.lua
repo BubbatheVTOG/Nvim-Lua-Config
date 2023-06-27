@@ -32,21 +32,12 @@ end)
 -- git branches
 vim.keymap.set('n', '<leader>gb', ':Telescope git_branches<CR>')
 
-local function single_or_multi_select(prompt_bufnr)
+local custom_actions = {}
+
+function custom_actions.fzf_multi_select(prompt_bufnr)
 	local current_picker = action_state.get_current_picker(prompt_bufnr)
-	--[[
 	local has_multi_selection = (next(current_picker:get_multi_selection()) ~= nil)
 
-	if (has_multi_selection) then
-		-- apply function to each selection
-		action_utils.map_selections(prompt_bufnr, function (selection)
-            --local filename = selection[1]
-            vim.cmd(':cexpr ' .. selection)
-        end)
-		vim.cmd(':cexpr ' .. current_picker:get_multi_selection())
-		]]
-
-	local has_multi_selection = (next(current_picker:get_multi_selection()) ~= nil)
 	if (has_multi_selection) then
 		actions.send_selected_to_qflist(prompt_bufnr)
 		actions.open_qflist()
@@ -55,28 +46,29 @@ local function single_or_multi_select(prompt_bufnr)
 	end
 end
 
-require('telescope').setup {
+require("telescope").setup {
 	defaults = {
-		i = {
-			["<CR>"] = single_or_multi_select,
+		mappings = {
+			i = {
+				["<cr>"] = custom_actions.fzf_multi_select
+			},
+			n = {
+				["<cr>"] = custom_actions.fzf_multi_select
+			}
 		},
-		n = {
-			["<CR>"] = single_or_multi_select,
-		},
-	},
-	pickers = {
-		find_files = {
-		},
-		git_files = {
-		},
-		git_branches = {
-			mappings = {
-				i = { ["<CR>"] = actions.git_switch_branch },
+		pickers = {
+			find_files = {
+			},
+			git_files = {
+			},
+			git_branches = {
+				mappings = {
+					i = { ["<CR>"] = actions.git_switch_branch },
+				},
 			},
 		},
-	},
-	extensions = {
+		extensions = {
+		}
 	}
 }
-
 require('telescope').load_extension('harpoon')

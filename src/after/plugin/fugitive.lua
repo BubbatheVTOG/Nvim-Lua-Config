@@ -13,6 +13,8 @@ autocmd("BufWinEnter", {
 
         local bufnr = vim.api.nvim_get_current_buf()
         local opts = { buffer = bufnr, remap = false }
+        -- NOTE: This sets the bind only in the fugitive buffer.
+        -- Else we use the pull bind
         vim.keymap.set("n", "<leader>gp", function()
             vim.cmd.Git('push')
         end, opts)
