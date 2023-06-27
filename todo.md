@@ -17,5 +17,5 @@
 - [ ] cursor word highlighting working
 - [x] telescope track branches
 - [ ] telescope scroll search window
-- [ ] lsp <leader>gc populates list with callers
+- [x] lsp <leader>gc populates list with callers
 - [ ] quickfix menu is editable

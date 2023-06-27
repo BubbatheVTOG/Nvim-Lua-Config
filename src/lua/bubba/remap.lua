@@ -60,17 +60,29 @@ vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
 
 -- LSP
-vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
--- vim.keymap.set("n", "<leader>gc", function() vim.lsp.buf.incomingCalls() end)
-vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
-vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
-vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end)
-vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end)
-vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end)
-vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end)
-vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end)
-vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end)
-vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
+  -- Symbols and definition
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "<leader>gc", require("telescope.builtin").lsp_references)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+-- vim.keymap.set("n", "<leader>rr", vim.lsp.buf.references)
+vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition)
+vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+vim.keymap.set("n", "K", vim.lsp.buf.hover)
+vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
+vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help)
+
+  -- Diagnostics
+vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_prev)
+
+  -- Workspaces
+vim.keymap.set("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols)
+vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder)
+vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder)
+--vim.keymap.set("n", "<leader>wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end)
 
 --[[
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
