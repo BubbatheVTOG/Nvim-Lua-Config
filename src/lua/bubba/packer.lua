@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
 	use 'norcalli/nvim-colorizer.lua'
 	use 'nvim-treesitter/nvim-treesitter-context'
 	use 'nvim-treesitter/playground'
+	use 'preservim/tagbar'
 	use 'theprimeagen/harpoon'
 	use 'tpope/vim-commentary'
 	use 'tpope/vim-fugitive'
