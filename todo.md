@@ -18,4 +18,4 @@
 - [x] telescope track branches
 - [x] telescope scroll search window
 - [x] lsp <leader>gc populates list with callers
-- [ ] quickfix menu is editable
+- [x] quickfix menu is editable

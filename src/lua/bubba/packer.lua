@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
 	use 'ayu-theme/ayu-vim'
 	use 'cohama/agit.vim'
 	use 'eandrju/cellular-automaton.nvim'
+	use 'itchyny/vim-qfedit'
 	use 'karb94/neoscroll.nvim'
 	use 'mbbill/undotree'
 	use 'norcalli/nvim-colorizer.lua'
