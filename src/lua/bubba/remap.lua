@@ -27,8 +27,8 @@ vim.keymap.set("v", "v", "$h")
 vim.keymap.set("v", "Y", "\"*y")
 vim.keymap.set("n", "Y", "y$")
 
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+--vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format)
 
 -- Folds
 vim.keymap.set("n", "<leader>ft", "za")

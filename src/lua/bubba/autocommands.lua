@@ -8,6 +8,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+--[[
 vim.api.nvim_create_autocmd("FileType", {
 	desc = "Make quick fix list editable",
 	group = vim.api.nvim_create_augroup("QFEditable", { clear = true }),
@@ -17,3 +18,4 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
 	end
 })
+]]
