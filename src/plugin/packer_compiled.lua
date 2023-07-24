@@ -306,19 +306,19 @@ time([[Config for trouble.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'NERDTreeFind', function(cmdargs)
-          require('packer.load')({'nerdtree-git-plugin'}, { cmd = 'NERDTreeFind', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nerdtree-git-plugin'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('NERDTreeFind ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'NERDTreeToggle', function(cmdargs)
           require('packer.load')({'nerdtree-git-plugin'}, { cmd = 'NERDTreeToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'nerdtree-git-plugin'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('NERDTreeToggle ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'NERDTreeFind', function(cmdargs)
+          require('packer.load')({'nerdtree-git-plugin'}, { cmd = 'NERDTreeFind', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nerdtree-git-plugin'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('NERDTreeFind ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 
