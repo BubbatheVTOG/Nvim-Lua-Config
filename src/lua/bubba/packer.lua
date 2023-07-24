@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-sleuth'
 	use 'tpope/vim-surround'
 	use 'vim-scripts/SearchComplete'
+	use 'lewis6991/hover.nvim'
 	-- use 'echasnovski/mini.nvim'
 
 	-- Lazy Loaded Plugins
